@@ -1,14 +1,21 @@
-const http = require("http");
+const express = require("express");
+const app = express();
+const router = express.Router();
 
-const hostname = "127.0.0.1";
+const path = `${__dirname}/views`;
 const port = 3000;
 
-const server = http.createServer((req, res) => {
-  res.statusCode = 200;
-  res.setHeader("Content-Type", "text/plain");
-  res.end("Hello, Docker World!\n");
+router.get("/", (req, res) => {
+  res.sendFile(`${path}/index.html`);
 });
 
-server.listen(port, hostname, () => {
-  console.log(`Server running at http://${hostname}:${port}/`);
+router.get("/sharks", (req, res) => {
+  res.sendFile(`${path}/sharks.html`);
+});
+
+app.use(express.static(path));
+app.use("/", router);
+
+app.listen(port, () => {
+  console.log(`Server running at http://localhost:${port}/`);
 });

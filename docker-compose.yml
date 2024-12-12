@@ -1,5 +1,7 @@
 services:
   app:
-    image: dhanifudin/express_sharks
+    container_name: express_sharks
+    build:
+      context: .
     ports:
       - "3000:3000"
