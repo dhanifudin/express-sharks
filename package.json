@@ -1,0 +1,14 @@
+{
+  "name": "express-sharks",
+  "version": "1.0.0",
+  "description": "Node.js app running in Docker",
+  "main": "app.js",
+  "scripts": {
+    "start": "node app.js"
+  },
+  "author": "Dian Hanifudin Subhi <dhanifudin@gmail.com>",
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.21.2"
+  }
+}
